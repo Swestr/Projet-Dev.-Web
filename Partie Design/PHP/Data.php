@@ -12,4 +12,6 @@
     }
     $j1=new Joueur("pseudo","password");
     $partie=new Partie($j1, NULL, Partie::NOIR,time(), Partie::PRIVEE);
+    $partie->debut_partie();
+    echo $partie->getDateDebut();
 ?>

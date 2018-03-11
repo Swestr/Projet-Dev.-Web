@@ -2,11 +2,13 @@
 	class Joueur{
 		private $pseudo;
 		private $password;
+		private $mail;
 		private $nbPartiesGagnees;
 		private $nbPartiesJouees;
-		function __construct($ps, $pa){
+		function __construct($ps, $pa, $m){
 			$this->password=md5($pa);
 			$this->pseudo=$ps;
+			$this->mail=$m;
 			$this->nbPartiesJouees=0;
 			$this->nbPartiesGagnees=0;
 		}

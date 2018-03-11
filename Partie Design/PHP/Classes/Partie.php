@@ -26,9 +26,8 @@
                 $this->coupsJoues=0;
         }
 
-        function debut_partie(Joueur $j_2){
-            $this->dateDebut=date('d/m/Y h:i:s H', time());
-            $this->j2=$j_2;
+        function debut_partie(){
+            $this->dateDebut=date('d/m/Y H:i:s', time());
         }
 
         private function setStatut($status){
@@ -42,7 +41,7 @@
 
         function fin_partie(Joueur $j){
             $this->vainqueur=$j;
-            $this->dateFin=date('d/m/Y h:i:s H', time());
+            $this->dateFin=date('d/m/Y H:i:s', time());
         }
 
         function ajout_coups(){
