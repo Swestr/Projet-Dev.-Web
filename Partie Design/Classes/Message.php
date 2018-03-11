@@ -3,7 +3,7 @@
         private $joueur;
         private $message;
         private $date;
-        function __construct($j, $m, $d) {
+        function __construct(Joueur $j, $m, $d) {
             //date_default_timezone_set('UTC');
             $this->joueur=$j;
             $this->message=$m;

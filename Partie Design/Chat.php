@@ -5,7 +5,7 @@
     for ($i=0; $i < $chat_G->size(); $i++) {
     	print("<tr>");
     	$message=$chat_G->get_Message($i);
-        print("<td>".$message->getJoueur()."</td><td>".$message->getMessage()."</td></tr>");
+        print("<td>".$message->getJoueur()->getPseudo()."</td><td>".$message->getMessage()."</td></tr>");
     }
     print("</table>");
 ?>

@@ -5,11 +5,10 @@
 		private $nbPartiesGagnees;
 		private $nbPartiesJouees;
 		function __construct($ps, $pa){
-			$this->password=$pa;
+			$this->password=md5($pa);
 			$this->pseudo=$ps;
 			$this->nbPartiesJouees=0;
 			$this->nbPartiesGagnees=0;
-			echo "$ps, $pa";
 		}
 
 		function gagner(){
@@ -18,7 +17,7 @@
 		}
 
 		function perdre(){
-			$this->nbPartiesJouees++;			
+			$this->nbPartiesJouees++;
 		}
 
 		function getPseudo(){
@@ -35,6 +34,9 @@
 		}
 		function setPassword($p){
 			$this->password=$p;
+		}
+		function toString(){
+			echo "pseudo = $this->pseudo<br />mdp = $this->password<br />parties gagnées / parties jouées = $this->nbPartiesGagnees / $this->nbPartiesJouees";
 		}
 	}
 
