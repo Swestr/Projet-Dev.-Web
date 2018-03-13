@@ -7,23 +7,23 @@ function init(){
 
     var passwd=document.getElementById("Password");
     passwd.addEventListener("blur", function(){VerificationPassword(passwd.value);}, false);
-
-    var mail=document.getElementById("Mail");
-    mail.addEventListener("blur", function(){VerificationMail(mail.value);}, false);
 }
 
 function VerificationPseudo(pseudo){
-    if(pseudo.length<5){
-        document.getElementById("VerifPseudo").textContent="Le pseudo n'est pas assez long.";
-        pseudoOK=false;
+    mailOK=false;
+    pseudoOK=false;
+    if(/^[a-zA-Z0-9\._\-]+\@[a-zA-Z0-9\._\-]{2,}\.[a-z]{2,4}$/.test(pseudo)){
+        //On a entré l'adresse mail
+        mailOK=true;
+        document.getElementById("VerifPseudo").textContent="";
     }
-    else if(pseudo.length>15){
-        document.getElementById("VerifPseudo").textContent="Le pseudo est trop long.";
-        pseudoOK=false;
-    }
-    else {
+    else if(pseudo.length>=5 && pseudo.length<=15){
+        //on a entré le pseudo
         pseudoOK=true;
         document.getElementById("VerifPseudo").textContent="";
+    }
+    else {
+        document.getElementById("VerifPseudo").textContent="Le pseudo entré n'est pas du bon format.";
     }
 }
 
@@ -35,17 +35,5 @@ function VerificationPassword(passwd){
     else {
         passwdOK=true;
         document.getElementById("VerifPasswd").textContent="";
-    }
-}
-
-
-function VerificationMail(mail){
-    if(!/^[a-zA-Z0-9\._\-]+\@[a-zA-Z0-9\._\-]{2,}\.[a-z]{2,4}$/.test(mail)){
-        document.getElementById("VerifMail").textContent="L'adresse mail n'a pas le bon format.";
-        mailOK=false;
-    }
-    else {
-        mailOK=true;
-        document.getElementById("VerifMail").textContent="";
     }
 }
