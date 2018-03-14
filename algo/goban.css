@@ -1,6 +1,6 @@
 svg
 {
-  background-image: url("wood.jpg");
+  background: url("wood.jpg");
   background-size: 765px 765px;
   background-repeat: no-repeat;
   margin: auto;
