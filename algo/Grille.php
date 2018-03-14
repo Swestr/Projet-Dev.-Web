@@ -53,8 +53,8 @@ class Grille
     for ($i = 0; $i <= $size; $i++)
     {
       $var = ($i * 10);
-      $this->x_label .= '<text x=" '.($var + 9.5).' " y="-2" font-size="3" > '.$char.' </text>';
-      $this->y_label .= '<text x="-5" y=" '.($var + 11).' " font-size="3" > '.$i.' </text>';
+      $this->x_label .= '<text x="'.($var + 9.5).'" y="-2" font-size="3" > '.$char.' </text>';
+      $this->y_label .= '<text x="-5" y="'.($var + 11).'" font-size="3" > '.$i.' </text>';
       $char++;
     }
   }
