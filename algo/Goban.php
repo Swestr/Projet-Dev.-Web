@@ -20,6 +20,7 @@
         <?php $grille->getYLabels();?>
         <?php $grille->getDots();?>
         <use transform="translate(200,0) rotate(90)" xlink:href="#traits" />
-        <?php $p->draw(); ?>
+        <?php $p->draw(1); ?>
+        <?php $p1->draw(0.5); ?>
     </g>
  </svg>
