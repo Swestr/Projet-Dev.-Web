@@ -30,6 +30,11 @@
 			}
 		}
 
+		function equals(Joueur $j){
+			if($j->getPseudo()!=$this->pseudo) return false;
+			return true;
+		}
+
 		function gagner(){
 			$this->nbPartiesGagnees++;
 			$this->nbPartiesJouees++;

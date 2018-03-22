@@ -8,6 +8,8 @@
         private $vainqueur;
         private $nbCoupsJoues;
         private $statut;
+        private $chat;
+
         const NOIR="Noir";
         const BLANC="Blanc";
         const PRIVEE="privee";
