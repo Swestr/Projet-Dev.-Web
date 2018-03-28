@@ -9,6 +9,8 @@
         private $nbCoupsJoues;
         private $statut;
         private $chat;
+        private $coups;
+        private $nbCoups;
 
         const NOIR="Noir";
         const BLANC="Blanc";
@@ -26,6 +28,11 @@
                 $this->dateFin=NULL;
                 $this->vainqueur=NULL;
                 $this->coupsJoues=0;
+                $this->nbCoups=0;
+        }
+
+        function ajoutCoups(Coup $c){
+            $this->coups[$nbCoups++]=$c;
         }
 
         function debut_partie(){

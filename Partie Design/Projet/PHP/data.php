@@ -1,12 +1,12 @@
-<?php
+<?php 
 $chat_box="Chatbox";
 
-// $nom_user[0]="Test1";
-// $nom_user[1]="Test2";
+$nom_user[0]="Test1";
+$nom_user[1]="Test2";
 
-if(isset($_GET['page']))
+if(isset($_GET['page'])) 
 	$page = $_GET['page'];
-else
+else								
 	$page = "0";
 
 $tabEntete[0]="GoGo";
@@ -25,11 +25,11 @@ $contenu[0]='<img id="imgAccueil" src="../Multimedia/Jeu.png" border="0" />
 				<h2>Hello !</h2>';
 $contenu[1]="<h2>Matériel</h2>
 				<p>
-				Le matériel de jeu traditionnel se compose d'un goban sur lequel est tracé un quadrillage de 19x19 lignes, soit 361 intersections,
-				et de pierres qui sont soit noires, soit blanches. Mais rien n'empêche les joueurs d'utiliser un autre matériel, et en particulier
+				Le matériel de jeu traditionnel se compose d'un goban sur lequel est tracé un quadrillage de 19x19 lignes, soit 361 intersections, 
+				et de pierres qui sont soit noires, soit blanches. Mais rien n'empêche les joueurs d'utiliser un autre matériel, et en particulier 
 				des gobans de 13x13 ou 9x9 lignes pour les parties d'initiation.
 				<br/>
-				Généralement, la distance entre deux lignes du goban est approximativement de 24 mm dans le sens de la longueur et de 22 mm dans le sens de la largeur :
+				Généralement, la distance entre deux lignes du goban est approximativement de 24 mm dans le sens de la longueur et de 22 mm dans le sens de la largeur : 
 				le goban n'est donc pas tout à fait carré. Quant aux pierres, elles sont de forme biconvexe et d'un diamètre d'environ 22 mm.
 				</p>";
 $contenu[2]="<p>Let's go !</p>";
@@ -45,8 +45,8 @@ $contenu[3]='<div class="divContenu3">
 								</div>
 								<div class="divForm">
 									<input class="inputForm" type="password" name="pass" placeholder="Mot de passe">
-
-								</div>
+									
+								</div>			
 								<div class="divButton">
 									<button class="buttonForm">Connexion</button>
 								</div>
@@ -80,7 +80,7 @@ $contenu[4]='<form >
 	                        <div id="VerifPasswd"></div>
 	                    </td>
 	                </tr>
-
+	
 	                <tr>
 	                    <td>
 	                        <label>Adresse mail : </label>
@@ -94,4 +94,4 @@ $contenu[4]='<form >
 	            </table>
 	            <input type="submit" value="Valider">
 	        </form>';
-?>
+?>    

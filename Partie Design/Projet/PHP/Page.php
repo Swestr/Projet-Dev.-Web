@@ -1,6 +1,6 @@
 <?php
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 <DOCTYPE html>
 <html>
@@ -8,9 +8,10 @@
 		<meta charset="utf-8" />
 		<title>GoGo</title>
 		<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+		<script  type="text/javascript" src="../JS/Ecrire_Message.js"></script>
 	</head>
 
-	<body>
+	<body onload="init()">
 		<?php include 'chat_box.php';?>
 		<?php include 'chat_user.php';?>
 

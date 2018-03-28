@@ -6,19 +6,31 @@
 		private $nbPartiesGagnees;
 		private $nbPartiesJouees;
 		private $etat;
+		private $connecte;
 
 		const VALIDE="valide";
 		const BANNI="banni";
 		const SUSPENDU="suspendu";
 
 
-		function __construct($ps, $pa, $m, $e){
+		function __construct($ps, $pa, $m){
 			$this->password=md5($pa);
 			$this->pseudo=$ps;
 			$this->mail=$m;
 			$this->nbPartiesJouees=0;
 			$this->nbPartiesGagnees=0;
-			$this->etat=$e;
+			$this->etat=self::VALIDE;
+			$this->connecte=true;
+		}
+
+		function connecter(){
+			$this->connecte=true;
+		}
+		function deconnecter(){
+			$this->connecte=false;
+		}
+		function getConnection(){
+			return $this->connecte;
 		}
 
 		function changerEtat($e){

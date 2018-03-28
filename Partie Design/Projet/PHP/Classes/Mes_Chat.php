@@ -15,13 +15,8 @@
         }
 
 
-        function ajoutMessage(Joueur $moi, Chat $ch, Message $m){
-            for ($i=0; $i <$this->nbChat ; $i++) {
-                if($this->chats[$i].equals($ch)){
-                    $this->chat[$i]->newMessage($m);
-                    break;
-                }
-            }
+        function ajoutMessage(Joueur $moi, $ch, Message $m){
+                $this->chats[$ch]->newMessage($m);
         }
 
         function getChat($i){
