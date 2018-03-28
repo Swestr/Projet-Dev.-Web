@@ -10,6 +10,7 @@
 
         function getNom(){return $this->nom;}
         function setNom($n){$this->nom=$n;}
+        
         function newMessage(Message $m){
             $this->messages[$this->nbMessage++]=$m;
         }

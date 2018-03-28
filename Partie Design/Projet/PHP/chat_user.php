@@ -1,8 +1,8 @@
 <?php
 include_once 'data.php';
 include_once 'Data1.php';
-if (!empty($_GET)) {
-	$mes_chats->ajoutMessage($j1, $_GET['chat'], new Message($j1,$_GET['msg'], date('d/m/Y H:i:s', time())));
+if (isset($_GET['chat']) && isset($_GET['msg'])) {
+		$mes_chats->ajoutMessage($_GET['chat'], new Message($j1,$_GET['msg'], date('d/m/Y H:i:s', time())));
 }
 for($chat=0;$chat<$mes_chats->size();$chat++) {
 	$right = ($chat*290) + 290;

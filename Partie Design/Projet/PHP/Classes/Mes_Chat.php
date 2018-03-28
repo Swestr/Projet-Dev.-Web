@@ -15,7 +15,7 @@
         }
 
 
-        function ajoutMessage(Joueur $moi, $ch, Message $m){
+        function ajoutMessage($ch, Message $m){
                 $this->chats[$ch]->newMessage($m);
         }
 

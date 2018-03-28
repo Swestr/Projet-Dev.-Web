@@ -30,21 +30,11 @@
     //Création du tableau de tous les chats + ajout du chat global
     $mes_chats=new Mes_Chat();
     $mes_chats->ajoutChat($chat_G);
-    phpinfo();
-    //Création d'un joueur et d'une partie en attente d'un autre joueur
+    //phpinfo();
+    //Création d'une partie en attente d'un autre joueur
     for($i=0;$i<10; $i++){
         $j="j".$i;
-        $$j=new Joueur("pseudo","password","email");
         $partie=new Partie($$j, NULL, Partie::NOIR,time(), Partie::PRIVEE);
         $partie->debut_partie();
     }
-    try {
-        $user='tf872254'; // Enter your DB User Name.
-        $pass='tf872254'; // Enter your DB Password.
-        $bdd = new PDO("OCI:dbname=ufrsciencestech.u-bourgogne.fr/", $user, $pass);
-        echo "Connection Successful";
-    } catch(PDOException $e) {
-        print "Erreur de connection : " . $e->getMessage() . "<br/>";
-}
-
 ?>
