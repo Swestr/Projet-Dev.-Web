@@ -1,40 +1,44 @@
 <?php
 	class Joueur{
 		private $pseudo;
-		private $password;
+		private $mdp;
 		private $mail;
-		private $nbPartiesGagnees;
-		private $nbPartiesJouees;
+		private $partiesGagnees;
+		private $partiesJouees;
 		private $etat;
-		private $connecte;
+		private $activite;
+		private $tempsDeSuspens;
 
-		const VALIDE="valide";
-		const BANNI="banni";
-		const SUSPENDU="suspendu";
+		const ENLIGNE="En-ligne";
+		const HORSLIGNE="hors-ligne";
 
+		const ACTIF="Actif";
+		const BANNI="Banni";
+		const SUSPENDU="Suspendu";
 
-		function __construct($ps, $pa, $m){
-			$this->password=md5($pa);
+		function __construct($ps, $pa, $m, $pj, $pg, $et, $v, $tds){
+			$this->mdp=$pa;
 			$this->pseudo=$ps;
 			$this->mail=$m;
-			$this->nbPartiesJouees=0;
-			$this->nbPartiesGagnees=0;
-			$this->etat=self::VALIDE;
-			$this->connecte=true;
+			$this->partiesJouees=$pj;
+			$this->partiesGagnees=$pg;
+			$this->changerEtat($et);
+			$this->activite=$v;
+			$this->tempsDeSuspens=$tds;
 		}
 
-		function connecter(){
-			$this->connecte=true;
+		function activer(){
+			$this->activite=true;
 		}
-		function deconnecter(){
-			$this->connecte=false;
+		function desactiver(){
+			$this->activite=false;
 		}
-		function getConnection(){
-			return $this->connecte;
+		function getConnexion(){
+			return $this->activite;
 		}
 
 		function changerEtat($e){
-			if($e=self::VALIDE || $e=self::BANNI || $e=self::SUSPENDU){
+			if($e=self::ACTIF || $e=self::BANNI || $e=self::SUSPENDU){
 				$this->etat=$e;
 			}
 			else{
@@ -48,31 +52,37 @@
 		}
 
 		function gagner(){
-			$this->nbPartiesGagnees++;
-			$this->nbPartiesJouees++;
+			$this->partiesGagnees++;
+			$this->partiesJouees++;
 		}
 
 		function perdre(){
-			$this->nbPartiesJouees++;
+			$this->partiesJouees++;
 		}
 
-		function getPseudo(){
-			return $this->pseudo;
-		}
-		function getPassword(){
-			return $this->password;
-		}
-		function getNbPartiesJouees(){
-			return $this->nbPartiesJouees;
-		}
-		function getNbPartiesGagnees(){
-			return $this->nbPartiesGagnees;
-		}
-		function setPassword($p){
-			$this->password=$p;
-		}
 		function toString(){
-			echo "pseudo = $this->pseudo<br />mdp = $this->password<br />parties gagnées / parties jouées = $this->nbPartiesGagnees / $this->nbPartiesJouees";
+			echo "pseudo = $this->pseudo<br />mdp = $this->mdp<br />parties gagnées / parties jouées = $this->partiesGagnees / $this->partiesJouees";
+		}
+		function getMdp(){
+			return $this->mdp ;
+		}
+		function getPseudo(){
+			return $this->pseudo ;
+		}
+		function getMail(){
+			return $this->mail ;
+		}
+		function getPartiesJouees(){
+			return $this->partiesJouees ;
+		}
+		function getPartiesGagnees(){
+			return $this->partiesGagnees ;
+		}
+		function getEtat(){
+			return $this->etat ;
+		}
+		function getActivite(){
+			return $this->activite ;
 		}
 	}
 
