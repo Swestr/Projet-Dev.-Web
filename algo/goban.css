@@ -1,7 +1,15 @@
 svg
 {
-  background: url("wood.jpg");
-  background-size: 765px 765px;
+  background-image: url('wood.jpg');
+  background-size: 800px 800px;
   background-repeat: no-repeat;
   margin: auto;
+}
+
+#label
+{
+	pointer-events: none;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }

@@ -2,19 +2,14 @@
   class Pierre
   {
     private $color;
-    private $coord_x;
-    private $coord_y;
-    private $svg;
-
-    function __construct($c, $x, $y)
+    function __construct($c)
     {
       $this->color = $c;
-      $this->coord_x = $x;
-      $this->coord_y = $y;
     }
-    function draw($trans)
+
+    function draw($id, $x, $y, $trans)
     {
-      echo '<circle cx="' .$this->coord_x. '" cy="' .$this->coord_y. '" r="5" stroke="black" stroke-width="0.5" fill="'.$this->color.'" fill-opacity="'$trans'"/>';
+      echo '<circle id="'.$id.'" cx="'.$x.'" cy="'.$y.'" r="3" stroke="'.$this->color.'" stroke-width="0.5" fill="'.$this->color.'" fill-opacity="'.$trans.'"/>';
     }
   }
 ?>
