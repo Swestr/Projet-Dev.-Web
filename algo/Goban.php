@@ -24,18 +24,6 @@
         <?php $grille->getDots();?>
         <?php echo '<use transform="translate('.($grille->getSize()*10-10).',0) rotate(90)" xlink:href="#traits" />' ?>
       </g>
-      <?php $p->draw("F4", 50, 30, 1); ?>
-      <?php $p->draw("F3", 50, 20, 1); ?>
-      <?php $p->draw("F2", 50, 10, 1); ?>
-      <?php $p->draw("E4", 40, 30, 1); ?>
-      <?php $p->draw("E2", 40, 10, 1); ?>
-      <?php $p->draw("D4", 30, 30, 1); ?>
-      <?php $p->draw("D3", 30, 20, 1); ?>
-      <?php $p->draw("D2", 30, 10, 1); ?>
-
-      <?php $p->draw("I1", 80, 0, 1); ?>
-
-      <?php $p->draw("I4", 80, 30, 1); ?>
     </g>
     <script xlink:href="Pierre.js"></script>
 </svg>
